@@ -81,8 +81,8 @@ export const createPost = async (req: any, res: any) => {
     });
 
     // Add title to Trie for autocomplete
-    titleTrie.insert(blog.title);
 
+    titleTrie.insert(blog.title);
     return res.status(200).json({
       message: "Blog created successfully",
       blog,
@@ -161,7 +161,7 @@ export const getAllBlogs = async (req: any, res: any) => {
 
 // Get All Blogs by a User
 export const getBlogsByUser = async (req: any, res: any) => {
-  const userId = req.id; // Assuming `req.id` contains the authenticated user ID
+  const userId = req.id;
 
   try {
     if (!userBlogsHashTable[userId]) {
